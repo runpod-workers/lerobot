@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     speech-dispatcher libgeos-dev \
     python${PYTHON_VERSION}-dev python${PYTHON_VERSION}-venv \
     curl wget vim htop screen tmux \
-    && ln -s /usr/bin/python${PYTHON_VERSION} /usr/bin/python \
+    && rm -f /usr/bin/python && ln -s /usr/bin/python${PYTHON_VERSION} /usr/bin/python \
     && python -m venv /opt/venv \
     && apt-get clean && rm -rf /var/lib/apt/lists/* \
     && echo "source /opt/venv/bin/activate" >> /root/.bashrc
