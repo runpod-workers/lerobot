@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl wget vim htop screen tmux \
     && rm -f /usr/bin/python && ln -s /usr/bin/python${PYTHON_VERSION} /usr/bin/python \
     && python -m venv /opt/venv \
+    && rm -f /usr/local/bin/jupyter* \
     && python3.11 -m pip install jupyterlab ipywidgets \
     && apt-get clean && rm -rf /var/lib/apt/lists/* \
     && echo "source /opt/venv/bin/activate" >> /root/.bashrc
