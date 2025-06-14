@@ -36,5 +36,8 @@ RUN mkdir -p /workspace/data /workspace/models /workspace/logs /workspace/output
 # Set proper permissions
 RUN chmod -R 755 /workspace && chmod -R 755 /lerobot
 
+# Expose JupyterLab port
+EXPOSE 8888
+
 # Set working directory back to workspace for user convenience
 WORKDIR /workspace
